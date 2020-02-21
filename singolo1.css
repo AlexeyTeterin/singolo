@@ -10,7 +10,7 @@ body {
 
 header {
   display: flex;
-  height: 87px;
+  height: 89px;
   padding: 0 40px;
 
   font-weight: 700;
@@ -22,13 +22,11 @@ header {
 }
 
 .logo {
-  height: 87px;
+  height: 89px;
   width: 30%;
 }
 
 .logo h1 {
-  margin: -2px 0 0 0;
-
   font-size: 25px;
   font-weight: 400;
   letter-spacing: normal;
@@ -49,11 +47,11 @@ header {
 }
 
 .menu {
-  height: 87px;
+  height: 89px;
   width: 70%;
 
   font-size: 12px;
-  line-height: 87px;
+  line-height: 89px;
   letter-spacing: normal;
 }
 
@@ -71,7 +69,7 @@ header {
 }
 
 .menu ul {
-  padding: 3px 0 0 0;
+  padding: 5px 0 0 0;
   margin: 0;
 
   text-align: right;
@@ -102,7 +100,7 @@ header {
 
   width: 16px;
   height: 27px;
-  margin: -19px 0 0 2px;
+  margin: -16px 0 0 2px;
 
   background-image: url(assets/arrow-left.svg);
 }
