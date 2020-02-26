@@ -16,7 +16,6 @@ body {
 .portfolio__content {
   margin: 0 auto;
   width: 940px;
-  /* padding: 0 40px; */
 }
 
 .portfolio__title {
@@ -47,10 +46,18 @@ body {
 
 .portfolio__filter {
   padding-left: 1px;
+  display: inline-block;
 }
 
-.filter {
-  display: inline-block;
+.filter__item {
+  float: left;
+  padding: 0 6px 0 6px;
+  margin-right: 10px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px solid #666d89;
+
+  background-color: #2d303a;
 
   font-size: 12px;
   line-height: 20px;
@@ -59,20 +66,27 @@ body {
   font-weight: 400;
 }
 
-.filter__item {
-  float: left;
-  padding: 0 6px 0 6px;
-  margin-right: 10px;
+.filter__item:hover {
+  cursor: pointer;
 
-  border-radius: 5px;
-  border: 1px solid #666d89;
+  -webkit-box-shadow: 0px 0px 2px 1px #767e9e;
+  -moz-box-shadow: 0px 0px 2px 1px#767e9e;
+  box-shadow: 0px 0px 2px 1px #767e9e;
+
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
 
-.filter__item_active {
-  float: left;
+.filter__item:active {
+  opacity: 0.5;
+}
 
+.filter__item:focus {
   color: #dedede;
-
+  outline: none;
   border: 1px solid #c5c5c5;
 }
 
@@ -91,6 +105,32 @@ body {
   height: 187px;
 }
 
+.portfolio__item>img:hover {
+  cursor: pointer;
+
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
+  -o-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.portfolio__item>img:active {
+  opacity: 0.5;
+
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
 .about {
   width: 100%;
   min-height: 728px;
@@ -99,7 +139,7 @@ body {
   background-color: #f2f2f2;
 }
 
-.about__content{
+.about__content {
   margin: 0 auto;
   width: 940px;
 }
@@ -122,8 +162,19 @@ body {
   width: 300px;
 }
 
-.about__photo {
-  
+.about__photo:hover {
+  cursor: pointer;
+  opacity: 0.8;
+
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.about__photo:active {
+  opacity: 0.6;
 }
 
 .about__name {
@@ -162,6 +213,21 @@ body {
 
   background-repeat: no-repeat;
   background-position: center;
+
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.about__social-icons>div:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.about__social-icons>div:active {
+  opacity: 0.4;
 }
 
 .icon-fb {
