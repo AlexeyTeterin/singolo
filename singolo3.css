@@ -67,6 +67,13 @@ body {
   color: #f0d8d9;
 }
 
+.form *:focus {
+  box-shadow: 0px 0px 4px 1px #f0d8d9;
+  outline: none;
+  
+  transition: all 100ms ease-in-out;
+}
+
 .form *::placeholder {
   color: #f48c8f;
 }
@@ -80,6 +87,19 @@ body {
 
 .form__submit {
   width: 120px;
+  background-color: #d6564f;
+}
+
+.form__submit:hover {
+  box-shadow: 0px 0px 4px 1px #f0d8d9;
+  cursor: pointer;
+  background-color:#2d303a;
+
+  transition: all 100ms ease-in-out;
+}
+
+.form__submit:active {
+  opacity: 0.5;
 }
 
 .info {
@@ -111,20 +131,19 @@ body {
   margin-right: 15px;
 }
 
-.info__link {
-  /* display: block; */
-  /* width: fit-content; */
-  cursor: pointer;
-  
-}
-
 .info__link a {
   color: #f0d8d9;
   text-decoration: none;
+
+  transition: all 100ms ease-in-out;
 }
 
-.info__link:hover {
+.info__link a:hover {
   opacity: 0.7;
+}
+
+.info__link a:active {
+  opacity: 0.4;
 }
 
 .info__icon {
@@ -177,7 +196,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
 
-  transition: all 150ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
 .social-icons>div:hover {
