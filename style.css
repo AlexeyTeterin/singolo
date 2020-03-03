@@ -60,12 +60,11 @@ header {
 .menu a {
   color: #ffffff;
   text-decoration: none;
+  transition: all 150ms ease;
 }
 
 .menu a:hover {
-  /* text-shadow: 0px 0px 3px #FFFAFE; */
-  opacity: 0.7;
-  transition: all 100ms ease-in-out;
+  color: #f06c64;
 }
 
 .menu a:active {
@@ -86,6 +85,7 @@ header {
 
 .menu__item_active {
   color: #f06c64;
+  cursor: pointer;
 }
 
 .opacity-30 {
@@ -117,6 +117,8 @@ header {
   left: 2px;
 
   background-image: url(assets/arrow-left.svg);
+
+  transition: all 150ms ease-in-out;
 }
 
 .right {
@@ -129,7 +131,6 @@ header {
   cursor: pointer;
   opacity: 0.7;
 
-  transition: all 100ms ease-in-out;
 }
 
 .slider-arrow:active {
@@ -388,12 +389,14 @@ header {
   display: none;
 }
 
+.portfolio__item>img {
+  transition: all 250ms ease-in-out;
+}
+
 .portfolio__item>img:hover {
   cursor: pointer;
 
-  transform: scale(1.05);
-
-  transition: all 250ms ease-in-out;
+  transform: scale(0.95);
 }
 
 .portfolio__item>img:active {
@@ -433,11 +436,14 @@ header {
   width: 300px;
 }
 
+.about__photo {
+  transition: all 150ms ease-in-out;
+}
+
 .about__photo:hover {
   cursor: pointer;
   opacity: 0.8;
-
-  transition: all 150ms ease-in-out;
+    transform: scale(0.98);
 }
 
 .about__photo:active {
@@ -481,12 +487,13 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 
-  transition: all 100ms ease-in-out;
+  transition: all 200ms ease;
 }
 
 .social-icons>div:hover {
   cursor: pointer;
   opacity: 0.7;
+  transform: scale(0.95);
 }
 
 .social-icons>div:active {
@@ -665,8 +672,6 @@ body {
 .info__link a {
   color: #f0d8d9;
   text-decoration: none;
-
-  transition: all 100ms ease-in-out;
 }
 
 .info__link a:hover {
