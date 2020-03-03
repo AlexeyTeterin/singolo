@@ -117,10 +117,14 @@ body {
   font-size: 18px;
   line-height: 18px;
   font-weight: 900;
+  letter-spacing: -0.006em;
 }
 
 .info__text {
   margin-top: 10px;
+
+  text-align: justify;
+  letter-spacing: -0.005em;
 }
 
 .info__contacts {
@@ -129,6 +133,18 @@ body {
 
 .info__contacts img {
   margin-right: 15px;
+}
+
+.info__link {
+  line-height: 21px;
+}
+
+.info__link:last-child {
+  margin-top: 1px;
+}
+
+.info__link:last-child img {
+  margin-top: 8px;
 }
 
 .info__link a {
@@ -148,7 +164,7 @@ body {
 
 .info__icon {
   width: 13px;
-  height: 1px;
+  height: 21px;
   float: left;
   margin-right: 10px;
 
@@ -157,7 +173,7 @@ body {
 
 .info__icon>img {
   display: inline-block;
-  margin: 0 auto;
+  margin: 5px auto 0;
 }
 
 footer {
