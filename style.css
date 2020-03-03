@@ -180,11 +180,12 @@ header {
 
 .services__content>h1 {
   margin: 0;
-  ;
+  
   padding: 59px 0 0px 0;
 
   font-size: 30px;
   font-weight: 900;
+  letter-spacing: -0.005em;
 }
 
 .services__content>p {
@@ -209,7 +210,7 @@ header {
 
   margin-top: 21px;
   width: 300px;
-  height: 103px;
+  height: 102px;
   float: left;
 }
 
@@ -272,6 +273,7 @@ header {
   line-height: 18px;
   color: #666d89;
   font-weight: 900;
+  letter-spacing: -0.005em;
 }
 
 .services-item-text p {
@@ -473,6 +475,7 @@ header {
   font-weight: 400;
   text-align: left;
   text-align: justify;
+  letter-spacing: -0.005em;
 }
 
 .social-icons>div {
