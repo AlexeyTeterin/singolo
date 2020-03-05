@@ -613,6 +613,8 @@ body {
 .form__submit {
   width: 120px;
   background-color: #d6564f;
+
+  transition: all 100ms ease-in-out;
 }
 
 .form__submit:hover {
@@ -620,7 +622,7 @@ body {
   cursor: pointer;
   background-color: #2d303a;
 
-  transition: all 100ms ease-in-out;
+  transform: scale(0.97);
 }
 
 .form__submit:active {
