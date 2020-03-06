@@ -427,10 +427,19 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .about__item {
   width: 300px;
+}
+
+.about__item:nth-child(2) {
+  padding-right: 1px;
+}
+
+.about__item:not(:last-child) .about__social-icons {
+  padding-left: 1px;
 }
 
 .about__photo {
