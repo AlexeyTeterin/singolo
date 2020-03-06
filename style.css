@@ -83,11 +83,6 @@ header {
   padding-left: 10px;
 }
 
-.menu__item_active {
-  color: #f06c64;
-  cursor: pointer;
-}
-
 .opacity-30 {
   opacity: 0.2;
 }
