@@ -232,6 +232,7 @@ header {
 
 .services-item:first-child .services-item-icon {
   background-image: url(assets/pen.svg);
+  padding-left: 1px;
 }
 
 .services-item:nth-child(2) .services-item-icon {
@@ -244,10 +245,13 @@ header {
 
 .services-item:nth-child(4) .services-item-icon {
   background-image: url(assets/phone.svg);
+  padding-left: 1px;
 }
 
 .services-item:nth-child(5) .services-item-icon {
   background-image: url(assets/bubble.svg);
+  padding-left: 1px;
+  padding-top: 1px;
 }
 
 .services-item:last-child .services-item-icon {
