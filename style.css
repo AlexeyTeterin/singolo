@@ -435,7 +435,7 @@ header {
 }
 
 .about__item:nth-child(2) {
-  padding-right: 1px;
+  padding-right: 2px;
 }
 
 .about__item:not(:last-child) .about__social-icons {
