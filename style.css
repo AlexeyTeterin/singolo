@@ -204,8 +204,9 @@ header {
   overflow: hidden;
 
   margin-top: 21px;
+  margin-bottom: 5px;
   width: 300px;
-  height: 102px;
+  height: 97px;
   float: left;
 }
 
