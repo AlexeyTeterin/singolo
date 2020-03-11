@@ -6,6 +6,9 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   width: 100%;
   height: 89px;
 
@@ -175,7 +178,7 @@ header {
 
 .services__content>h1 {
   margin: 0;
-  
+
   padding: 59px 0 0px 0;
 
   font-size: 30px;
@@ -454,7 +457,7 @@ header {
 .about__photo:hover {
   cursor: pointer;
   opacity: 0.8;
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .about__photo:active {
