@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
@@ -60,6 +60,7 @@ header {
   letter-spacing: normal;
 }
 
+
 .menu a {
   color: #ffffff;
   text-decoration: none;
@@ -72,6 +73,10 @@ header {
 
 .menu a:active {
   opacity: 0.5;
+}
+
+.menu .active {
+  color: #f06c64;
 }
 
 .menu ul {
@@ -91,6 +96,8 @@ header {
 }
 
 .slider {
+  scroll-margin-top: 95px;
+  padding-top: 95px;
   width: 100%;
   height: 594px;
   border-bottom: 6px solid #ea676b;
@@ -158,6 +165,8 @@ header {
 }
 
 .services {
+  scroll-margin-top: 95px;
+
   width: 100%;
   min-height: 500px;
   border-bottom: 6px solid white;
@@ -294,6 +303,8 @@ header {
 }
 
 .portfolio {
+  scroll-margin-top: 95px;
+
   width: 100%;
   height: 863px;
   border-bottom: 6px solid #323746;
@@ -411,6 +422,8 @@ header {
 }
 
 .about {
+  scroll-margin-top: 95px;
+
   width: 100%;
   min-height: 728px;
   border-bottom: 6px solid white;
@@ -535,14 +548,9 @@ header {
   background-image: url(assets/icon-linkedin.png);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-
-  font-family: 'Lato', sans-serif;
-}
-
 .feedback {
+  scroll-margin-top: 95px;
+
   width: 100%;
   height: 648px;
   border-bottom: 6px solid #ea676b;
