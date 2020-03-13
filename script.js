@@ -1,6 +1,7 @@
 const MENU = document.querySelector('.menu');
 const BTN = document.getElementById('btn');
 const CLOSE_BTN = document.getElementById('close-btn');
+const PORTFOLIO = document.querySelector("#portfolio > div > div.portfolio__table ");
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
@@ -79,4 +80,11 @@ CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('result-subject').innerText = '';
   document.getElementById('result-describe').innerText = '';
   document.getElementById('message-block').classList.add('hidden');
+});
+
+PORTFOLIO.addEventListener('click', (event) => {
+  PORTFOLIO.querySelectorAll('div > img').forEach(element => {
+    element.classList.remove('selected');
+  });
+  event.target.classList.add('selected');
 });
