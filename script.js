@@ -1,13 +1,14 @@
 const MENU = document.querySelector('.menu');
-var selectedID;
+var selectedID = 'menu-home';
 
-MENU.addEventListener('click', function (e) {
-  if (selectedID !== undefined) document.getElementById(selectedID).className = "";
-  let id = e.target.id;
+MENU.addEventListener('click', (event) => {
+  let id = event.target.id;
+  console.log(id);
 
-  document.getElementById(id).className = "active";
-  selectedID = id;
-  console.log(selectedID);
+  if (document.getElementById(id) !== null) {
+    document.getElementById(id).className = "active";
+    selectedID = id;
+  }
 
   switch (true) {
     case (selectedID === 'menu-home'): {
