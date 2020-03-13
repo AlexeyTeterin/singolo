@@ -2,26 +2,27 @@ const MENU = document.querySelector('.menu');
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
-  behavior: "smooth"
+  behavior: "smooth",
 };
-var menuLinks = {
-  'menu-home': 'div.slider',
-  'menu-serv': 'div.services',
-  'menu-about': 'div.about',
-  'menu-portf': 'div.portfolio',
-  'menu-contact': 'div.feedback',
+var menuTargetIDs = {
+  'menu-home': '#slider',
+  'menu-serv': '#services',
+  'menu-about': '#about',
+  'menu-portf': '#portfolio',
+  'menu-contact': '#feedback',
 };
 
 MENU.addEventListener('click', (event) => {
   let id = event.target.id;
   console.log(id);
 
-  if (document.getElementById(id) !== null) {
-    document.getElementById(id).className = "active";
+  if (id !== "") {
+    document.getElementById(selectedID).classList.remove('active');
+    document.getElementById(id).classList.add("active");
     selectedID = id;
   }
 
-  document.querySelector(menuLinks[selectedID]).scrollIntoView(smoothScroll);
+  document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
 });
 
 window.addEventListener('load', () => {
