@@ -104,5 +104,23 @@ FILTER.addEventListener('click', (event) => {
   for (let index = 0; index < elements.length - 1; index++) {
     elements[index].innerHTML = elements[index + 1].innerHTML;
   }
-  elements[elements.length-1].innerHTML = temp;
+  elements[elements.length - 1].innerHTML = temp;
+});
+
+document.querySelector('#iphone-v-off').addEventListener('click', (event) => {
+  let turnedOff = document.getElementById('iphone-v-off');
+  if (turnedOff.classList.length === 0) {
+    turnedOff.classList.add('hidden');
+  } else {
+    turnedOff.classList.remove('hidden');
+  }
+});
+
+document.querySelector('.iphone-v').addEventListener('click', (event) => {
+  let turnedOff = document.getElementById('iphone-v-off');
+  if (turnedOff.classList.length === 0) {
+    turnedOff.classList.add('hidden');
+  } else {
+    turnedOff.classList.remove('hidden');
+  }
 });

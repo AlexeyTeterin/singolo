@@ -818,3 +818,14 @@ footer {
 #close-btn:focus {
   outline: none;
 }
+
+#iphone-v-off {
+  position: absolute;
+  top: 213px;
+  left: 340px;
+  transition: all 250ms ease-in-out;
+}
+
+#iphone-v-off.hidden {
+  opacity: 0;
+}
