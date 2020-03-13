@@ -381,7 +381,7 @@ header {
   opacity: 0.5;
 }
 
-.filter__item:focus {
+.filter__item.focus {
   color: #dedede;
   outline: none;
   border: 1px solid #c5c5c5;

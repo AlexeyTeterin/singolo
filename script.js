@@ -1,7 +1,8 @@
 const MENU = document.querySelector('.menu');
 const BTN = document.getElementById('btn');
 const CLOSE_BTN = document.getElementById('close-btn');
-const PORTFOLIO = document.querySelector("#portfolio > div > div.portfolio__table ");
+const FILTER = document.querySelector(".portfolio__filter");
+const PORTFOLIO = document.querySelector(".portfolio__table");
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
@@ -87,4 +88,21 @@ PORTFOLIO.addEventListener('click', (event) => {
     element.classList.remove('selected');
   });
   event.target.classList.add('selected');
+});
+
+FILTER.addEventListener('click', (event) => {
+
+  if (event.target.className !== 'filter__item') return;
+
+  FILTER.querySelectorAll('button').forEach(btn => {
+    btn.classList.remove('focus');
+  });
+  event.target.classList.add('focus');
+
+  let elements = PORTFOLIO.querySelectorAll("div");
+  let temp = elements[0].innerHTML;
+  for (let index = 0; index < elements.length - 1; index++) {
+    elements[index].innerHTML = elements[index + 1].innerHTML;
+  }
+  elements[elements.length-1].innerHTML = temp;
 });
