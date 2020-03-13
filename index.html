@@ -189,9 +189,10 @@
       <form action="#" class="form">
         <input type="text" name="username" placeholder="Name (Required)" required>
         <input type="email" name="email" placeholder="Email (Required)" required>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="details" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-        <input type="submit" value="Submit" class="form__submit">
+        <input type="text" name="subject" placeholder="Subject" id="subject">
+        <textarea name="details" id="describe" cols="30" rows="10"
+          placeholder="Describe your project in detail..."></textarea>
+        <input type="submit" id="btn" value="Submit" class="form__submit">
       </form>
 
       <div class="info">
@@ -227,6 +228,18 @@
     </div>
   </div>
 
+  <div id="message-block" class="hidden">
+    <div id="message">
+      <p>Письмо отправлено</p>
+      <p><span id="result-subject"></span></p>
+      <p><span id="result-describe"></span></p>
+      <br>
+      <button id="close-btn">OK</button>
+      <p></p>
+      
+    </div>
+  </div>
+
   <footer>
     <div class="footer__content">
       <div class="copyright">© Copyright 2013 · by PSDchat.com</div>
@@ -240,4 +253,5 @@
   </footer>
   <script src="script.js"></script>
 </body>
+
 </html>

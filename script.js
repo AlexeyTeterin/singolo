@@ -1,4 +1,6 @@
 const MENU = document.querySelector('.menu');
+const BTN = document.getElementById('btn');
+const CLOSE_BTN = document.getElementById('close-btn');
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
@@ -58,4 +60,23 @@ window.addEventListener('scroll', () => {
     document.getElementById('menu-contact').className = "active";
     selectedID = 'menu-contact';
   }
+});
+
+BTN.addEventListener('click', (event) => {
+  event.preventDefault();
+  document.getElementById('message-block').style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
+
+  const subject = document.getElementById('subject').value.toString();
+  document.getElementById('result-subject').innerText = (subject === '') ? ('Без темы') : ('Тема: ' + subject);
+
+  const describe = document.getElementById('describe').value.toString();
+  document.getElementById('result-describe').innerText = (describe === '') ? ('Без описания') : ('Описание: ' + describe);
+
+  document.getElementById('message-block').classList.remove('hidden');
+});
+
+CLOSE_BTN.addEventListener('click', (event) => {
+  document.getElementById('result-subject').innerText = '';
+  document.getElementById('result-describe').innerText = '';
+  document.getElementById('message-block').classList.add('hidden');
 });
