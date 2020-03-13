@@ -4,6 +4,13 @@ var smoothScroll = {
   block: "start",
   behavior: "smooth"
 };
+var menuLinks = {
+  'menu-home': 'div.slider',
+  'menu-serv': 'div.services',
+  'menu-about': 'div.about',
+  'menu-portf': 'div.portfolio',
+  'menu-contact': 'div.feedback',
+};
 
 MENU.addEventListener('click', (event) => {
   let id = event.target.id;
@@ -14,28 +21,7 @@ MENU.addEventListener('click', (event) => {
     selectedID = id;
   }
 
-  switch (true) {
-    case (selectedID === 'menu-home'): {
-      document.querySelector('div.slider').scrollIntoView(smoothScroll);
-      break;
-    }
-    case (selectedID === 'menu-serv'): {
-      document.querySelector('div.services').scrollIntoView(smoothScroll);
-      break;
-    }
-    case (selectedID === 'menu-about'): {
-      document.querySelector('div.about').scrollIntoView(smoothScroll);
-      break;
-    }
-    case (selectedID === 'menu-portf'): {
-      document.querySelector('div.portfolio').scrollIntoView(smoothScroll);
-      break;
-    }
-    case (selectedID === 'menu-contact'): {
-      document.querySelector('div.feedback').scrollIntoView(smoothScroll);
-      break;
-    }
-  }
+  document.querySelector(menuLinks[selectedID]).scrollIntoView(smoothScroll);
 });
 
 window.addEventListener('load', () => {
@@ -44,7 +30,7 @@ window.addEventListener('load', () => {
   }
 });
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => {
 
   if (window.pageYOffset < 500) {
     document.getElementById(selectedID).classList.remove('active');
