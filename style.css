@@ -105,6 +105,9 @@ header {
   border-bottom: 6px solid #ea676b;
 
   background-color: #f06c64;
+
+  transition: all 0.5s linear;
+  user-select: none;
 }
 
 .slider__content {
@@ -114,9 +117,34 @@ header {
   position: relative;
 }
 
+.slide {
+  display: block;
+  position: absolute;
+}
+
+.slide>img {
+  position: absolute;
+  top: 38px;
+  left: 200px
+}
+
+.slide.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.next {
+  /* position: absolute;
+  top: 0; */
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
 .slider-arrow {
   position: absolute;
   top: 50%;
+  z-index: 1;
 
   width: 16px;
   height: 27px;
@@ -778,7 +806,7 @@ footer {
   background: #0008;
 }
 
-#message-block.hidden{
+#message-block.hidden {
   display: none;
 }
 
@@ -824,7 +852,7 @@ footer {
   top: 118px;
   left: 85px;
   transition: all 250ms ease-in-out;
-  user-select: none; 
+  user-select: none;
 }
 
 #iphone-v-off.hidden {
@@ -837,7 +865,7 @@ footer {
   left: 515px;
   transition: all 250ms ease-in-out;
   transform: rotate(90deg);
-  user-select: none; 
+  user-select: none;
 }
 
 #iphone-h-off.hidden {

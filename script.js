@@ -107,7 +107,7 @@ FILTER.addEventListener('click', (event) => {
   elements[elements.length - 1].innerHTML = temp;
 });
 
-
+// Выключение экранов телефонов
 document.querySelectorAll('#iphone-v-off, #iphone-h-off').forEach(iphoneScreen => {
   iphoneScreen.addEventListener('click', (event) => {
     if (iphoneScreen.classList.length === 0) {
@@ -127,3 +127,26 @@ document.querySelectorAll('.iphone-v, .iphone-h').forEach(iphoneBody => {
     }
   });
 });
+
+// Переключение слайдера
+
+document.querySelectorAll('#arrow').forEach(arrow => {
+  arrow.addEventListener('click', () => {
+    let activeSlide = document.querySelector('.slide.active');
+    let nextSlide = document.querySelector('.slide.next');
+    console.log(arrow);
+    activeSlide.classList.add('next');
+    activeSlide.classList.remove('active');
+    nextSlide.classList.remove('next');
+    nextSlide.classList.add('active');
+
+    if (document.querySelector('#slide2').classList[1] === 'active') {
+      document.querySelector('.slider').style.setProperty('background-color', '#648BF0');
+    } else {
+      document.querySelector('.slider').style.setProperty('background-color', '#f06c64');
+    }
+
+    
+  });
+});
+
