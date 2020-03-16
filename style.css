@@ -824,8 +824,22 @@ footer {
   top: 118px;
   left: 85px;
   transition: all 250ms ease-in-out;
+  user-select: none; 
 }
 
 #iphone-v-off.hidden {
+  opacity: 0;
+}
+
+#iphone-h-off {
+  position: absolute;
+  top: 113px;
+  left: 515px;
+  transition: all 250ms ease-in-out;
+  transform: rotate(90deg);
+  user-select: none; 
+}
+
+#iphone-h-off.hidden {
   opacity: 0;
 }

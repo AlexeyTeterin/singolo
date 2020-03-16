@@ -107,20 +107,23 @@ FILTER.addEventListener('click', (event) => {
   elements[elements.length - 1].innerHTML = temp;
 });
 
-document.querySelector('#iphone-v-off').addEventListener('click', (event) => {
-  let turnedOff = document.getElementById('iphone-v-off');
-  if (turnedOff.classList.length === 0) {
-    turnedOff.classList.add('hidden');
-  } else {
-    turnedOff.classList.remove('hidden');
-  }
+
+document.querySelectorAll('#iphone-v-off, #iphone-h-off').forEach(iphoneScreen => {
+  iphoneScreen.addEventListener('click', (event) => {
+    if (iphoneScreen.classList.length === 0) {
+      iphoneScreen.classList.add('hidden');
+    } else {
+      iphoneScreen.classList.remove('hidden');
+    }
+  });
 });
 
-document.querySelector('.iphone-v').addEventListener('click', (event) => {
-  let turnedOff = document.getElementById('iphone-v-off');
-  if (turnedOff.classList.length === 0) {
-    turnedOff.classList.add('hidden');
-  } else {
-    turnedOff.classList.remove('hidden');
-  }
+document.querySelectorAll('.iphone-v, .iphone-h').forEach(iphoneBody => {
+  iphoneBody.addEventListener('click', (event) => {
+    if (iphoneBody.nextElementSibling.classList.length === 0) {
+      iphoneBody.nextElementSibling.classList.add('hidden');
+    } else {
+      iphoneBody.nextElementSibling.classList.remove('hidden');
+    }
+  });
 });
