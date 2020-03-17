@@ -135,8 +135,6 @@ header {
 }
 
 .slide.next {
-  /* position: absolute;
-  top: 0; */
   visibility: hidden;
   opacity: 0;
 }
@@ -165,18 +163,27 @@ header {
 .slider-arrow:hover {
   cursor: pointer;
   opacity: 0.7;
-
 }
 
 .slider-arrow:active {
   opacity: 0.4;
 }
 
+.iphone-mask {
+  width: 215px;
+  height: 458px;
+  border-radius: 27px;
+}
+
+.iphone-mask.rotate90 {
+  width: 458px;
+  height: 215px;
+}
+
 .iphone-v {
   position: absolute;
   top: 53px;
   left: 72px;
-
   width: 240px;
   height: 483px;
 

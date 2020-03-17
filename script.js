@@ -107,7 +107,7 @@ FILTER.addEventListener('click', (event) => {
   elements[elements.length - 1].innerHTML = temp;
 });
 
-// Выключение экранов телефонов
+// Выключение экранов телефонов по тапу на экран
 document.querySelectorAll('#iphone-v-off, #iphone-h-off').forEach(iphoneScreen => {
   iphoneScreen.addEventListener('click', (event) => {
     if (iphoneScreen.classList.length === 0) {
@@ -118,12 +118,13 @@ document.querySelectorAll('#iphone-v-off, #iphone-h-off').forEach(iphoneScreen =
   });
 });
 
-document.querySelectorAll('.iphone-v, .iphone-h').forEach(iphoneBody => {
+// Выключение экранов телефонов по тапу на корпус телефона
+document.querySelectorAll('.iphone-mask').forEach(iphoneBody => {
   iphoneBody.addEventListener('click', (event) => {
-    if (iphoneBody.nextElementSibling.classList.length === 0) {
-      iphoneBody.nextElementSibling.classList.add('hidden');
+    if (iphoneBody.parentElement.nextElementSibling.classList.length === 0) {
+      iphoneBody.parentElement.nextElementSibling.classList.add('hidden');
     } else {
-      iphoneBody.nextElementSibling.classList.remove('hidden');
+      iphoneBody.parentElement.nextElementSibling.classList.remove('hidden');
     }
   });
 });
