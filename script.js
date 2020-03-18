@@ -87,9 +87,11 @@ function switchOnOff(which) {
 document.querySelector('#arrow-right').addEventListener('click', () => {
   let activeSlide = document.querySelector('.slide.active');
   let nextSlide = document.querySelector('.slide.next');
-
+  nextSlide.style.setProperty('left', '100%');
+  console.log(nextSlide);
+  
   document.querySelector('.slider').style.setProperty('background-color', changeBG());
-
+  
   activeSlide.classList.add('toLeft');
   activeSlide.style.opacity = 0;
   nextSlide.classList.add('toLeft');
@@ -102,28 +104,35 @@ document.querySelector('#arrow-right').addEventListener('click', () => {
     activeSlide.classList.remove('toLeft');
     nextSlide.classList.add('active');
     activeSlide.classList.add('next');
+    console.log(nextSlide);
+    nextSlide.style.setProperty('left', '0');
   }, 350);
 });
-
 
 // Переключение слайдера кнопкой влево
 document.querySelector('#arrow-left').addEventListener('click', () => {
   let activeSlide = document.querySelector('.slide.active');
   let nextSlide = document.querySelector('.slide.next');
-  let temp;
-
+  nextSlide.style.setProperty('left', '-100%');
+  console.log(nextSlide);
+  
   document.querySelector('.slider').style.setProperty('background-color', changeBG());
-
+  
   activeSlide.classList.add('toRight');
   activeSlide.style.opacity = 0;
-
+  nextSlide.classList.add('toRight');
+  nextSlide.style.opacity = 1;
+  
   setTimeout(() => {
+    nextSlide.classList.remove('next');
+    activeSlide.classList.remove('active');
+    nextSlide.classList.remove('toRight');
     activeSlide.classList.remove('toRight');
-    temp = activeSlide.innerHTML;
-    activeSlide.innerHTML = nextSlide.innerHTML;
-    nextSlide.innerHTML = temp;
-    activeSlide.style.opacity = 1;
-  }, 400);
+    nextSlide.classList.add('active');
+    activeSlide.classList.add('next');
+    console.log(nextSlide);
+    nextSlide.style.setProperty('left', '0');
+  }, 350);
 });
 
 //  Выделение картинки в Portfolio

@@ -148,6 +148,10 @@ header {
   left: 100%;
 }
 
+.slide.fromRight {
+  left: 100%;
+}
+
 .slide.toLeft {
   animation-name: toLeft;
   animation-timing-function: linear;
