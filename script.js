@@ -16,6 +16,7 @@ var menuTargetIDs = {
   'menu-contact': '#feedback',
 };
 
+// Активация элементов меню при нажатии
 MENU.addEventListener('click', (event) => {
   let id = event.target.id;
   console.log(id);
@@ -29,14 +30,15 @@ MENU.addEventListener('click', (event) => {
   document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
 });
 
+// Активация кнопки Home при загрузке страницы
 window.addEventListener('load', () => {
   if (window.pageYOffset === 0) {
     document.querySelector('#menu-home').classList.add('active');
   }
 });
 
+// Переключение меню при скролле окна
 window.addEventListener('scroll', () => {
-
   if (window.pageYOffset < 500) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-home').classList.add('active');
@@ -64,6 +66,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Нажатие кнопки Submit
 BTN.addEventListener('click', (event) => {
   event.preventDefault();
   document.getElementById('message-block').style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
@@ -77,12 +80,16 @@ BTN.addEventListener('click', (event) => {
   document.getElementById('message-block').classList.remove('hidden');
 });
 
+// Нажатие кнопки OK после отправки формы
 CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('result-subject').innerText = '';
   document.getElementById('result-describe').innerText = '';
   document.getElementById('message-block').classList.add('hidden');
+  document.querySelector('form').reset(); // очистка формы
+
 });
 
+//  Выделение картинки в Portfolio
 PORTFOLIO.addEventListener('click', (event) => {
   PORTFOLIO.querySelectorAll('div > img').forEach(element => {
     element.classList.remove('selected');
@@ -90,8 +97,8 @@ PORTFOLIO.addEventListener('click', (event) => {
   event.target.classList.add('selected');
 });
 
+//Перемешивание картинок Porfolio при нажатии на фильтры
 FILTER.addEventListener('click', (event) => {
-
   if (event.target.className !== 'filter__item') return;
 
   FILTER.querySelectorAll('button').forEach(btn => {
