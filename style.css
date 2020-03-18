@@ -436,6 +436,9 @@ header {
 
   width: 220px;
   height: 187px;
+
+  opacity: 1;
+  transition: 150ms;
 }
 
 .portfolio__item:nth-child(n+13) {

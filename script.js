@@ -107,11 +107,22 @@ FILTER.addEventListener('click', (event) => {
   event.target.classList.add('focus');
 
   let elements = PORTFOLIO.querySelectorAll("div");
-  let temp = elements[0].innerHTML;
-  for (let index = 0; index < elements.length - 1; index++) {
-    elements[index].innerHTML = elements[index + 1].innerHTML;
-  }
-  elements[elements.length - 1].innerHTML = temp;
+
+  elements.forEach(el => {
+    el.style.opacity = 0;
+  });
+
+  setTimeout(() => {
+    let temp = elements[0].innerHTML;
+    for (let index = 0; index < elements.length - 1; index++) {
+      elements[index].innerHTML = elements[index + 1].innerHTML;
+    }
+    elements[elements.length - 1].innerHTML = temp;
+  }, 150);
+
+  elements.forEach(el => {
+    setTimeout(() => el.style.opacity = 1, 150);
+  });
 });
 
 // Выключение экранов телефонов по тапу на экран
@@ -154,7 +165,6 @@ document.querySelectorAll('#arrow').forEach(arrow => {
       document.querySelector('.slider').style.setProperty('background-color', '#f06c64');
     }
 
-    
+
   });
 });
-
