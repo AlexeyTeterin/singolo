@@ -36,20 +36,19 @@
 
   <div class="slider" id="slider">
     <div class="slider__content">
-      <div class="slider-arrow" id="arrow"></div>
-      <div class="slider-arrow right" id="arrow"></div>
+      <div class="slider-arrow" id="arrow-left"></div>
+      <div class="slider-arrow right" id="arrow-right"></div>
       <div class="slide active">
         <div class="iphone-v">
-          <div class="iphone-mask"></div>
+          <div class="iphone-mask" onclick="switchOnOff(1)"></div>
         </div>
-        <div id="iphone-v-off" class="hidden">
-
+        <div id="iphone-v-off" class="hidden" onclick="switchOnOff(1)">
           <img src="assets/iphone_v_off.png" alt="off">
         </div>
         <div class="iphone-h">
-          <div class="iphone-mask rotate90"></div>
+          <div class="iphone-mask rotate90" onclick="switchOnOff(2)"></div>
         </div>
-        <div id="iphone-h-off" class="hidden">
+        <div id="iphone-h-off" class="hidden" onclick="switchOnOff(2)">
           <img src="assets/iphone_v_off.png" alt="off">
         </div>
       </div>

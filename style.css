@@ -8,7 +8,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   height: 89px;
 
@@ -118,9 +118,13 @@ header {
 }
 
 .slide {
+  width: 100%;
+  height: 100%;
   display: block;
   position: absolute;
-  transition: all 0.5s linear;
+  transition: all 0.35s linear;
+  animation-duration: 0.35s;
+  animation-iteration-count: 1;
 }
 
 .slide>img {
@@ -131,18 +135,49 @@ header {
 
 .slide.active {
   visibility: visible;
-  opacity: 1;
+  z-index: 1;
 }
 
 .slide.next {
   visibility: hidden;
-  opacity: 0;
+  /* opacity: 0; */
+}
+
+.slide.toLeft {
+  animation-name: toLeft;
+  animation-timing-function: linear;
+  /* opacity: 0; */
+}
+
+@keyframes toLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-940px);
+  }
+}
+
+.slide.toRight {
+  animation-name: toRight;
+  animation-timing-function: linear;
+}
+
+@keyframes toRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(940px);
+  }
 }
 
 .slider-arrow {
   position: absolute;
   top: 50%;
-  z-index: 1;
+  z-index: 2;
 
   width: 16px;
   height: 27px;
@@ -438,7 +473,7 @@ header {
   height: 187px;
 
   opacity: 1;
-  transition: 150ms;
+  transition: 250ms;
 }
 
 .portfolio__item:nth-child(n+13) {
@@ -454,8 +489,6 @@ header {
   opacity: 0.7;
   transform: scale(0.98);
 }
-
-
 
 .portfolio__item>img.selected {
   outline: 5px solid #F06C64;
