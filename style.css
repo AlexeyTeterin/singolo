@@ -136,11 +136,14 @@ header {
 .slide.active {
   visibility: visible;
   z-index: 1;
+  opacity: 1;
 }
 
 .slide.next {
-  visibility: hidden;
-  /* opacity: 0; */
+  visibility: visible;
+  position: absolute;
+  opacity: 0;
+  left: 100%;
 }
 
 .slide.toLeft {
