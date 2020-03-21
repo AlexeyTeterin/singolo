@@ -3,6 +3,7 @@ const BTN = document.getElementById('btn');
 const CLOSE_BTN = document.getElementById('close-btn');
 const FILTER = document.querySelector(".portfolio__filter");
 const PORTFOLIO = document.querySelector(".portfolio__table");
+const FORM = document.querySelector('#myForm');
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
@@ -75,12 +76,12 @@ window.addEventListener('scroll', () => {
 
 // Вкл/выкл телефонов
 function switchOnOff(which) {
-    let phone = document.querySelectorAll('.iphone-mask')[which-1].parentElement.nextElementSibling;
-    if ( phone.classList.length === 0) {
-      phone.classList.add('hidden');
-    } else {
-      phone.classList.remove('hidden');
-    }
+  let phone = document.querySelectorAll('.iphone-mask')[which - 1].parentElement.nextElementSibling;
+  if (phone.classList.length === 0) {
+    phone.classList.add('hidden');
+  } else {
+    phone.classList.remove('hidden');
+  }
 }
 
 // Переключение слайдера кнопкой вправо
@@ -89,14 +90,14 @@ document.querySelector('#arrow-right').addEventListener('click', () => {
   let nextSlide = document.querySelector('.slide.next');
   nextSlide.style.setProperty('left', '100%');
   console.log(nextSlide);
-  
+
   document.querySelector('.slider').style.setProperty('background-color', changeBG());
-  
+
   activeSlide.classList.add('toLeft');
   activeSlide.style.opacity = 0;
   nextSlide.classList.add('toLeft');
   nextSlide.style.opacity = 1;
-  
+
   setTimeout(() => {
     nextSlide.classList.remove('next');
     activeSlide.classList.remove('active');
@@ -115,14 +116,14 @@ document.querySelector('#arrow-left').addEventListener('click', () => {
   let nextSlide = document.querySelector('.slide.next');
   nextSlide.style.setProperty('left', '-100%');
   console.log(nextSlide);
-  
+
   document.querySelector('.slider').style.setProperty('background-color', changeBG());
-  
+
   activeSlide.classList.add('toRight');
   activeSlide.style.opacity = 0;
   nextSlide.classList.add('toRight');
   nextSlide.style.opacity = 1;
-  
+
   setTimeout(() => {
     nextSlide.classList.remove('next');
     activeSlide.classList.remove('active');
@@ -171,8 +172,8 @@ FILTER.addEventListener('click', (event) => {
   });
 });
 
-// Нажатие кнопки Submit
-BTN.addEventListener('click', (event) => {
+// Отправка формы
+function sendForm() {
   event.preventDefault();
   document.getElementById('message-block').style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
 
@@ -183,7 +184,7 @@ BTN.addEventListener('click', (event) => {
   document.getElementById('result-describe').innerText = (describe === '') ? ('Без описания') : ('Описание: ' + describe);
 
   document.getElementById('message-block').classList.remove('hidden');
-});
+}
 
 // Нажатие кнопки OK после отправки формы
 CLOSE_BTN.addEventListener('click', (event) => {
@@ -192,6 +193,3 @@ CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('message-block').classList.add('hidden');
   document.querySelector('form').reset(); // очистка формы
 });
-
-
-
