@@ -148,12 +148,13 @@ PORTFOLIO.addEventListener('click', (event) => {
 FILTER.addEventListener('click', (event) => {
   if (event.target.className !== 'filter__item') return;
 
-  FILTER.querySelectorAll('button').forEach(btn => {
-    btn.classList.remove('focus');
+  let elements = PORTFOLIO.querySelectorAll("div");
+  let filterButtons = FILTER.querySelectorAll('button');
+
+  filterButtons.forEach(filter_btn => {
+    filter_btn.classList.remove('focus');
   });
   event.target.classList.add('focus');
-
-  let elements = PORTFOLIO.querySelectorAll("div");
 
   elements.forEach(el => {
     el.style.opacity = 0;
@@ -165,10 +166,12 @@ FILTER.addEventListener('click', (event) => {
       elements[index].innerHTML = elements[index + 1].innerHTML;
     }
     elements[elements.length - 1].innerHTML = temp;
-  }, 250);
+  }, 200);
 
+  let n = 0;
   elements.forEach(el => {
-    setTimeout(() => el.style.opacity = 1, 250);
+    console.log(n+=25);
+    setTimeout(() => el.style.opacity = 1, 200+n);
   });
 });
 
