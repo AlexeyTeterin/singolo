@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/fonts.css">
+
   <title>Singolo</title>
 </head>
 
@@ -19,26 +20,41 @@
       </div>
       <div class="menu">
         <ul>
-          <li><a href="#">HOME</a></li>
+          <li><a href="" onclick="return false" id="menu-home">HOME</a></li>
           <li class="opacity-30">&#183;</li>
-          <li><a href="#services">SERVICES</a></li>
+          <li><a href="" onclick="return false" id="menu-serv">SERVICES</a></li>
           <li class="opacity-30">&#183;</li>
-          <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li><a href="" onclick="return false" id="menu-portf">PORTFOLIO</a></li>
           <li class="opacity-30">&#183;</li>
-          <li><a href="#about">ABOUT</a></li>
+          <li><a href="" onclick="return false" id="menu-about">ABOUT</a></li>
           <li class="opacity-30">&#183;</li>
-          <li><a href="#feedback">CONTACT</a></li>
+          <li><a href="" onclick="return false" id="menu-contact">CONTACT</a></li>
         </ul>
       </div>
     </div>
   </header>
 
-  <div class="slider">
+  <div class="slider" id="slider">
     <div class="slider__content">
-      <div class="slider-arrow"></div>
-      <div class="slider-arrow right"></div>
-      <div class="iphone-v"></div>
-      <div class="iphone-h"></div>
+      <div class="slider-arrow" id="arrow-left"></div>
+      <div class="slider-arrow right" id="arrow-right"></div>
+      <div class="slide active">
+        <div class="iphone-v">
+          <div class="iphone-mask" onclick="switchOnOff(1)"></div>
+        </div>
+        <div id="iphone-v-off" class="hidden" onclick="switchOnOff(1)">
+          <img src="assets/iphone_v_off.png" alt="off">
+        </div>
+        <div class="iphone-h">
+          <div class="iphone-mask rotate90" onclick="switchOnOff(2)"></div>
+        </div>
+        <div id="iphone-h-off" class="hidden" onclick="switchOnOff(2)">
+          <img src="assets/iphone_v_off.png" alt="off">
+        </div>
+      </div>
+      <div class="slide next" id="slide2">
+        <img src="assets/Slide2.png" alt="">
+      </div>
     </div>
   </div>
 
@@ -108,7 +124,7 @@
       <div class="portfolio__subtitle subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
         lacinia odio sem nec elit.</div>
       <div class="portfolio__filter">
-        <button class="filter__item" autofocus>All</button>
+        <button class="filter__item">All</button>
         <button class="filter__item">Web Design</button>
         <button class="filter__item">Graphic Design</button>
         <button class="filter__item">Artwork</button>
@@ -185,12 +201,13 @@
       <div class="feedback__subtitle subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
         mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac
         cursus commodo, tortor mauris condimentum nibh.</div>
-      <form action="#" class="form">
+      <form action="#" class="form" id="myForm" onsubmit="sendForm()">
         <input type="text" name="username" placeholder="Name (Required)" required>
         <input type="email" name="email" placeholder="Email (Required)" required>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="details" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-        <input type="submit" value="Submit" class="form__submit">
+        <input type="text" name="subject" placeholder="Subject" id="subject">
+        <textarea name="details" id="describe" cols="30" rows="10"
+          placeholder="Describe your project in detail..." maxlength="700"></textarea>
+        <input type="submit" id="btn" value="Submit" class="form__submit">
       </form>
 
       <div class="info">
@@ -226,6 +243,19 @@
     </div>
   </div>
 
+  <div id="message-block" class="hidden">
+    <div id="message">
+      <p>Письмо отправлено</p>
+      <p><span id="result-subject"></span></p>
+      <p><span id="result-describe"></span></p>
+      <br>
+      <button id="close-btn">OK</button>
+      <p></p>
+
+    </div>
+  </div>
+
+
   <footer>
     <div class="footer__content">
       <div class="copyright">© Copyright 2013 · by PSDchat.com</div>
@@ -237,5 +267,7 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
+
 </html>
