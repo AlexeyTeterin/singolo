@@ -82,7 +82,7 @@ header {
 }
 
 .menu ul {
-  padding: 5px 0 0 0;
+  padding: 5px 40px 0 0;
   margin: 0;
 
   text-align: right;
@@ -123,7 +123,7 @@ header {
   height: 100%;
   display: block;
   position: absolute;
-  
+
   transition: opacity 0.35s linear;
   animation-duration: 0.35s;
   animation-iteration-count: 1;
@@ -923,3 +923,23 @@ footer {
 #iphone-h-off.hidden {
   opacity: 0;
 }
+
+
+
+@media (max-width: 1020px) {
+  .header__content {
+    width: 100%;
+  }
+
+  .logo {
+    padding: 0 0 0 40px;
+  }
+
+  .menu ul {
+    padding: 5px 40px 0 0;
+  }
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 375px) {}
