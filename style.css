@@ -1116,6 +1116,10 @@ footer {
     width: 32%;
   }
 
+  .about__name {
+    padding: 12px 0 5px 0;
+}
+
   .about__social-icons {
     padding-top: 14px;
 }
