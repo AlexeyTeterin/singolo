@@ -1069,8 +1069,8 @@ footer {
   }
 
   .portfolio__title {
-    padding-top:58px;
-}
+    padding-top: 58px;
+  }
 
   .portfolio__table {
     display: flex;
@@ -1096,15 +1096,29 @@ footer {
     height: 184px;
     display: block;
     margin: 0 auto;
-}
+  }
+
+  .about {
+    padding: 0 40px 65px;
+    width: unset;
+    min-height: unset;
+  }
 
   .about__content {
     width: 100%;
   }
 
-  .about__item {
-    width: 30%;
+  .about__title {
+    padding-top: 58px;
   }
+
+  .about__item {
+    width: 32%;
+  }
+
+  .about__social-icons {
+    padding-top: 14px;
+}
 
   .feedback {
     height: auto;
