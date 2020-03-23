@@ -202,7 +202,7 @@ header {
 
   background-image: url(assets/arrow-left.svg);
 
-  transition: all 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
 }
 
 .right {
@@ -1038,14 +1038,22 @@ footer {
     padding: 0 40px;
   }
 
+  .services-container {
+    padding: 0 24px 60px 0;
+  }
+
   .services__content {
     width: 100%;
+  }
+
+  .services__content>h1 {
+    padding: 44px 0 0px 0;
   }
 
   .services-item {
     margin-top: 21px;
     margin-bottom: 5px;
-    width: 40%;
+    width: 46%;
     height: 97px;
     float: left;
   }
