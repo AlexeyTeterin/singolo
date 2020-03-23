@@ -3,6 +3,8 @@ body {
   padding: 0;
 
   font-family: 'Lato', sans-serif;
+
+  /* width: 100%; */
 }
 
 header {
@@ -125,8 +127,13 @@ header {
   position: absolute;
 
   transition: opacity 0.35s linear;
-  animation-duration: 0.35s;
+  animation-duration: 0.355s;
   animation-iteration-count: 1;
+}
+
+.slide1 {
+  width: 100%;
+  height: 100%;
 }
 
 .slide>img {
@@ -234,6 +241,18 @@ header {
   background-image: url(assets/iPhone%20Vertical.png);
 }
 
+#iphone-v-off {
+  position: absolute;
+  top: 118px;
+  left: 85px;
+  transition: opacity 250ms ease-in-out;
+  user-select: none;
+}
+
+#iphone-v-off.hidden {
+  opacity: 0;
+}
+
 .iphone-h {
   position: absolute;
   top: 174px;
@@ -243,6 +262,19 @@ header {
   height: 240px;
 
   background-image: url(assets/iPhone%20Horizontal.png);
+}
+
+#iphone-h-off {
+  position: absolute;
+  top: 113px;
+  left: 515px;
+  transition: opacity 250ms ease-in-out;
+  transform: rotate(90deg);
+  user-select: none;
+}
+
+#iphone-h-off.hidden {
+  opacity: 0;
 }
 
 .services {
@@ -303,12 +335,12 @@ header {
   float: left;
 }
 
-.services-item:nth-child(1),
+/* .services-item:nth-child(1),
 .services-item:nth-child(2),
 .services-item:nth-child(4),
 .services-item:nth-child(5) {
   margin-right: 20px;
-}
+} */
 
 .services-item-icon {
   margin-top: 3px;
@@ -899,31 +931,6 @@ footer {
   outline: none;
 }
 
-#iphone-v-off {
-  position: absolute;
-  top: 118px;
-  left: 85px;
-  transition: all 250ms ease-in-out;
-  user-select: none;
-}
-
-#iphone-v-off.hidden {
-  opacity: 0;
-}
-
-#iphone-h-off {
-  position: absolute;
-  top: 113px;
-  left: 515px;
-  transition: all 250ms ease-in-out;
-  transform: rotate(90deg);
-  user-select: none;
-}
-
-#iphone-h-off.hidden {
-  opacity: 0;
-}
-
 
 
 @media (max-width: 1020px) {
@@ -937,6 +944,190 @@ footer {
 
   .menu ul {
     padding: 5px 40px 0 0;
+  }
+
+  .slider {
+    height: 447px;
+  }
+
+  .slider__content {
+    width: 100%;
+  }
+
+  .slider-arrow {
+    width: 16px;
+    height: 27px;
+    margin: -16px 0;
+    left: 4%;
+  }
+
+  .slide1 {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .slide>img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 390px;
+    top: 6%;
+    left: unset;
+  }
+
+  .right {
+    left: unset;
+    right: 4%;
+
+    transform: rotate(180deg);
+  }
+
+  .iphone-mask {
+    width: 162px;
+    height: 344px;
+    border-radius: 27px;
+  }
+
+  .iphone-mask.rotate90 {
+    width: 344px;
+    height: 162px;
+  }
+
+  .iphone-v {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 180px;
+    height: 364px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .iphone-h {
+    position: absolute;
+    top: 133px;
+    left: unset;
+    right: 0;
+
+    width: 364px;
+    height: 180px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  #iphone-v-off {
+    position: absolute;
+    top: 88px;
+    left: 9px;
+    width: 143px;
+    height: 252px;
+  }
+
+  #iphone-h-off {
+    position: absolute;
+    top: 88px;
+    left: 334px;
+    width: 143px;
+    height: 251px;
+  }
+
+  .services {
+    padding: 0 40px;
+  }
+
+  .services__content {
+    width: 100%;
+  }
+
+  .services-item {
+    margin-top: 21px;
+    margin-bottom: 5px;
+    width: 40%;
+    height: 97px;
+    float: left;
+  }
+
+  .portfolio {
+    padding: 0 40px;
+    width: unset;
+  }
+
+  .portfolio__content {
+    width: 100%;
+  }
+
+  .portfolio__table {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: -1px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .portfolio__item {
+    padding-top: 17px;
+    padding-bottom: 3px;
+
+    width: 220px;
+    height: 187px;
+  }
+
+
+  .about__content {
+    width: 100%;
+  }
+
+  .about__item {
+    width: 30%;
+  }
+
+  .feedback {
+    height: auto;
+  }
+
+  .feedback__content {
+    width: 100%;
+  }
+
+  .form {
+    float: left;
+    width: 57.5%;
+  }
+
+  .form * {
+    margin-bottom: 16px;
+    padding: 0 15px;
+
+    width: 100%;
+    height: 38px;
+    border-radius: 5px;
+
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    color: #f0d8d9;
+  }
+
+  .info {
+    float: right;
+    width: 29%;
+
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .footer__content {
+    width: 100%;
+  }
+
+  .footer__social-icons {
+    float: right;
+    margin-top: 22px;
+    margin-right: 0;
   }
 }
 
