@@ -127,7 +127,7 @@ header {
   position: absolute;
 
   transition: opacity 0.35s linear;
-  animation-duration: 0.355s;
+  animation-duration: 0.375s;
   animation-iteration-count: 1;
 }
 
@@ -186,7 +186,7 @@ header {
   }
 
   100% {
-    transform: translateX(940px);
+    transform: translateX(100%);
   }
 }
 
