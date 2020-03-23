@@ -47,27 +47,32 @@ MENU.addEventListener('click', (event) => {
 
 // Переключение меню при скролле окна
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset < 500) {
+  let sliderOffset = document.querySelector('#slider').offsetTop;
+  let servicesOffset = document.querySelector('#services').offsetTop;
+  let portfolioOffset = document.querySelector('#portfolio').offsetTop;
+  let aboutOffset = document.querySelector('#about').offsetTop;
+  let feedbackOffset = document.querySelector('#feedback').offsetTop;
+  if (Math.abs(window.pageYOffset-sliderOffset <= 300)) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-home').classList.add('active');
     selectedID = 'menu-home';
   }
-  if (window.pageYOffset >= 400) {
+  if (Math.abs(window.pageYOffset-servicesOffset) <= 300) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-serv').classList.add('active');
     selectedID = 'menu-serv';
   }
-  if (window.pageYOffset >= 900) {
+  if (Math.abs(window.pageYOffset-portfolioOffset) <= 300) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-portf').className = "active";
     selectedID = 'menu-portf';
   }
-  if (window.pageYOffset >= 1700) {
+  if (Math.abs(window.pageYOffset-aboutOffset) <= 300) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-about').className = "active";
     selectedID = 'menu-about';
   }
-  if (window.pageYOffset >= 2400 || (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
+  if (Math.abs(window.pageYOffset-feedbackOffset) <= 300 || (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-contact').className = "active";
     selectedID = 'menu-contact';

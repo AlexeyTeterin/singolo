@@ -3,8 +3,6 @@ body {
   padding: 0;
 
   font-family: 'Lato', sans-serif;
-
-  /* width: 100%; */
 }
 
 header {
@@ -1118,23 +1116,34 @@ footer {
 
   .about__name {
     padding: 12px 0 5px 0;
-}
+  }
 
   .about__social-icons {
     padding-top: 14px;
-}
+  }
 
   .feedback {
     height: auto;
+    width: unset;
+    padding: 0 40px 24px;
   }
 
   .feedback__content {
     width: 100%;
   }
 
+  .feedback__title {
+    padding: 58px 0 27px 0;
+  }
+
+  .feedback__subtitle {
+    padding-bottom: 24px;
+  }
+
   .form {
     float: left;
-    width: 57.5%;
+    width: 60%;
+    padding-right: 60px;
   }
 
   .form * {
@@ -1152,21 +1161,18 @@ footer {
   }
 
   .info {
-    float: right;
-    width: 29%;
+    float: left;
 
-    font-size: 12px;
-    line-height: 22px;
+    width: 31%;
+  }
+
+  .form__submit {
+    width: 120px;
   }
 
   .footer__content {
-    width: 100%;
-  }
-
-  .footer__social-icons {
-    float: right;
-    margin-top: 22px;
-    margin-right: 0;
+    width: auto;
+    padding: 0 40px;
   }
 }
 
