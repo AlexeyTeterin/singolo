@@ -1368,6 +1368,7 @@ footer {
   .services {
     padding: 0 32px;
     border: unset;
+    scroll-margin-top: 71px;
   }
 
   .services-container {
@@ -1389,6 +1390,7 @@ footer {
   .portfolio {
     padding: 0 30px 42px;
     border: unset;
+    scroll-margin-top: 71px;
   }
 
   .portfolio__title {
@@ -1418,6 +1420,7 @@ footer {
   .about {
     padding: 0 30px 11px;
     border: unset;
+    scroll-margin-top: 71px;
   }
 
   .about__title {
@@ -1440,6 +1443,7 @@ footer {
   .feedback {
     padding: 0 30px 38px;
     border: unset;
+    scroll-margin-top: 71px;
   }
 
   .feedback__content {
