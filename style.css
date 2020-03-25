@@ -1257,11 +1257,11 @@ footer {
   }
 
   .menu.toRight {
-    animation-name: toRight;
-    animation-timing-function: linear;
+    animation-name: showMenu;
+    animation-timing-function: ease-in-out;
   }
 
-  @keyframes toRight {
+  @keyframes showMenu {
     0% {
       transform: translateX(-100%);
     }
@@ -1272,11 +1272,11 @@ footer {
   }
 
   .menu.toLeft {
-    animation-name: toLeft;
-    animation-timing-function: linear;
+    animation-name: hideMenu;
+    animation-timing-function: ease-in-out;
   }
 
-  @keyframes toLeft {
+  @keyframes hideMenu {
     0% {
       transform: translateX(0%);
     }
