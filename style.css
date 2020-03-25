@@ -30,6 +30,7 @@ header {
 .logo {
   height: 89px;
   width: 30%;
+  user-select: none;
 }
 
 .logo.sliding-logo {
@@ -61,6 +62,7 @@ header {
   left: 20px;
   display: none;
   transition: all 250ms linear;
+  background-color: #2d2f39;
 }
 
 .menu {
@@ -98,6 +100,7 @@ header {
   margin: 0;
 
   text-align: right;
+  user-select: none;
 }
 
 .menu li {
@@ -892,15 +895,23 @@ footer {
 
 #menu-block {
   position: absolute;
+  visibility: visible;
+  opacity: 1;
   z-index: 2;
   width: 100%;
   top: 0;
   left: 0;
   background: #0008;
+  transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
 }
 
 #menu-block.hidden {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 #message-block {
@@ -1235,26 +1246,21 @@ footer {
     display: block;
     position: relative;
     margin: 0 0 0 70px;
-
   }
 
   .menu {
     display: none;
     z-index: 5;
     position: absolute;
-
     background-color: #2d2f39;
-
     height: unset;
     width: 74%;
     left: -100%;
-  
     font-size: 24px;
     line-height: unset;
-
     animation-duration: 0.25s;
     animation-iteration-count: 1;
-  }
+}
 
   .menu.toRight {
     animation-name: showMenu;
