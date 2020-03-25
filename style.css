@@ -32,6 +32,10 @@ header {
   width: 30%;
 }
 
+.logo.sliding-logo {
+  display: none;
+}
+
 .logo h1 {
   font-size: 25px;
   letter-spacing: -0.02em;
@@ -49,6 +53,14 @@ header {
 
 .red {
   color: #f06c64;
+}
+
+.burger {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  display: none;
+  transition: all 250ms linear;
 }
 
 .menu {
@@ -878,10 +890,23 @@ footer {
   background-image: url(assets/icon-linkedin.png);
 }
 
+#menu-block {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #0008;
+}
+
+#menu-block.hidden {
+  display: none;
+}
+
 #message-block {
   position: absolute;
+  z-index: 2;
   width: 100%;
-  /* height: 3528px; */
   top: 0;
   left: 0;
   background: #0008;
@@ -893,10 +918,11 @@ footer {
 
 #message {
   position: absolute;
-  width: 400px;
+
   background: #f2f2f2;
-  bottom: 300px;
-  left: 40%;
+  width: 60vw;
+  bottom: 50vh;
+  left: 20vw;
   text-align: center;
   border-radius: 8px;
 }
@@ -928,7 +954,9 @@ footer {
   outline: none;
 }
 
-
+.scroll-hidden {
+  overflow: hidden;
+}
 
 @media (max-width: 1020px) { 
   .header__content {
@@ -1198,12 +1226,86 @@ footer {
     line-height: 71px;
   }
 
+  .burger {
+    display: block;
+    z-index: 6;
+  }
+
+  .logo.sliding-logo {
+    display: block;
+    position: relative;
+    margin: 0 0 0 70px;
+
+  }
+
   .menu {
     display: none;
+    z-index: 5;
+    position: absolute;
+
+    background-color: #2d2f39;
+
+    height: unset;
+    width: 74%;
+    left: -100%;
+  
+    font-size: 24px;
+    line-height: unset;
+
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+
+  .menu.toRight {
+    animation-name: toRight;
+    animation-timing-function: linear;
+  }
+
+  @keyframes toRight {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .menu.toLeft {
+    animation-name: toLeft;
+    animation-timing-function: linear;
+  }
+
+  @keyframes toLeft {
+    0% {
+      transform: translateX(0%);
+    }
+  
+    100% {
+      transform: translateX(-100%);
+    }
   }
 
   .menu ul {
-    padding: 5px 40px 0 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 0;
+    padding: 146px 0 0 70px;
+    height: 100vh;
+    width: 100%;
+  
+    text-align: left;
+    box-sizing: border-box;
+  }
+  
+  .menu li {
+    display: block;
+    height: 58px;
+    padding: 20px 0 0 0;
+  }
+
+  li.opacity-30 {
+    display: none;
   }
 
   .slider {
@@ -1377,6 +1479,15 @@ footer {
 
   .form__submit {
     width: 100%;
+  }
+
+  #message {
+    position: absolute;
+    width: 80vw;
+    bottom: 50vh;
+    left: 10vw;
+    text-align: center;
+    border-radius: 8px;
   }
 
   .footer__content {

@@ -4,6 +4,8 @@ const CLOSE_BTN = document.getElementById('close-btn');
 const FILTER = document.querySelector(".portfolio__filter");
 const PORTFOLIO = document.querySelector(".portfolio__table");
 const FORM = document.querySelector('#myForm');
+const BURGER = document.querySelector('.burger');
+const menuBlock = document.getElementById('menu-block');
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
@@ -42,6 +44,11 @@ MENU.addEventListener('click', (event) => {
     selectedID = id;
   }
 
+  if (BURGER.style.getPropertyValue('transform') === 'rotate(90deg)') {
+
+    hideMenu();
+  }
+
   document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
 });
 
@@ -52,27 +59,27 @@ window.addEventListener('scroll', () => {
   let portfolioOffset = document.querySelector('#portfolio').offsetTop;
   let aboutOffset = document.querySelector('#about').offsetTop;
   let feedbackOffset = document.querySelector('#feedback').offsetTop;
-  if (Math.abs(window.pageYOffset-sliderOffset <= 300)) {
+  if (Math.abs(window.pageYOffset - sliderOffset <= 300) || (window.pageYOffset === 0)) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-home').classList.add('active');
     selectedID = 'menu-home';
   }
-  if (Math.abs(window.pageYOffset-servicesOffset) <= 300) {
+  if (Math.abs(window.pageYOffset - servicesOffset) <= 280) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-serv').classList.add('active');
     selectedID = 'menu-serv';
   }
-  if (Math.abs(window.pageYOffset-portfolioOffset) <= 300) {
+  if (Math.abs(window.pageYOffset - portfolioOffset) <= 300) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-portf').className = "active";
     selectedID = 'menu-portf';
   }
-  if (Math.abs(window.pageYOffset-aboutOffset) <= 300) {
+  if (Math.abs(window.pageYOffset - aboutOffset) <= 300) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-about').className = "active";
     selectedID = 'menu-about';
   }
-  if (Math.abs(window.pageYOffset-feedbackOffset) <= 300 || (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
+  if (Math.abs(window.pageYOffset - feedbackOffset) <= 300 || (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-contact').className = "active";
     selectedID = 'menu-contact';
@@ -175,8 +182,8 @@ FILTER.addEventListener('click', (event) => {
 
   let n = 0;
   elements.forEach(el => {
-    console.log(n+=25);
-    setTimeout(() => el.style.opacity = 1, 200+n);
+    console.log(n += 25);
+    setTimeout(() => el.style.opacity = 1, 200 + n);
   });
 });
 
@@ -201,3 +208,41 @@ CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('message-block').classList.add('hidden');
   document.querySelector('form').reset(); // очистка формы
 });
+
+function switchMenu() {
+  if (BURGER.style.getPropertyValue('transform') == 'rotate(90deg)') {
+    hideMenu();
+  } else {
+    showMenu();
+  }
+}
+
+function hideMenu() {
+  BURGER.style.setProperty('transform', 'rotate(0deg)');
+  MENU.classList.remove('toRight');
+  MENU.classList.add('toLeft');
+  menuBlock.classList.add('hidden');
+  setTimeout(() => {
+    MENU.style.setProperty('display', 'none');
+  }, 235);
+}
+
+function showMenu() {
+  BURGER.style.setProperty('transform', 'rotate(90deg)');
+  MENU.style.setProperty('display', 'unset');
+  MENU.style.setProperty('left', '0');
+  MENU.classList.remove('toLeft');
+  MENU.classList.add('toRight');
+  menuBlock.style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
+  menuBlock.classList.remove('hidden');
+}
+
+window.onresize = (event) => {
+  if (window.innerWidth > 768) {
+    document.getElementById('menu-block').classList.add('hidden');
+    MENU.style.setProperty('display', 'unset');
+  } else {
+    MENU.style.setProperty('display', 'none');
+    BURGER.style.setProperty('transform', 'rotate(0deg)');
+  }
+};

@@ -13,12 +13,20 @@
 <body>
   <header>
     <div class="header__content">
+      <div class="burger" onclick="switchMenu()">
+        <img src="assets/burger-menu-icon.png" alt="burger" width="25px" height="20px">
+      </div>
       <div class="logo">
         <div>
           <h1><a href="#">SINGOLO<span class="red">*</span></a></h1>
         </div>
       </div>
       <div class="menu">
+        <div class="logo sliding-logo">
+          <div>
+            <h1><a href="#">SINGOLO<span class="red">*</span></a></h1>
+          </div>
+        </div>
         <ul>
           <li><a href="" onclick="return false" id="menu-home">HOME</a></li>
           <li class="opacity-30">&#183;</li>
@@ -258,6 +266,7 @@
     </div>
   </div>
 
+  <div id="menu-block" class="hidden" onclick="hideMenu()"></div>
 
   <footer>
     <div class="footer__content">
