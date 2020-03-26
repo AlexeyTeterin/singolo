@@ -243,6 +243,7 @@ window.onresize = (event) => {
     document.getElementById('menu-block').classList.add('hidden');
     MENU.style.setProperty('display', 'unset');
   } else {
+    document.getElementById('menu-block').classList.add('hidden');
     MENU.style.setProperty('display', 'none');
     BURGER.style.setProperty('transform', 'rotate(0deg)');
   }
