@@ -520,8 +520,7 @@ header {
 }
 
 .portfolio__item {
-  padding-top: 17px;
-  padding-bottom: 3px;
+  margin: 17px 0 3px 0;
 
   width: 220px;
   height: 187px;
@@ -1122,20 +1121,16 @@ footer {
   }
 
   .portfolio__item {
-    flex: 1 3 30%;
-
-    padding-top: 17px;
-    padding-bottom: 3px;
-
-    width: 216px;
-    height: 184px;
+    width: 31.6%;
+    height: auto;
+    margin: 2.5% 0 0 0;
   }
 
   .portfolio__item>img {
-    width: 216px;
-    height: 184px;
+    width: 100%;
+    height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .about {
@@ -1412,15 +1407,14 @@ footer {
   }
 
   .portfolio__item {
-    flex: 50%;
-    padding: 14px 0 0 0;
-    width: 151px;
-    height: 128px;
+    width: 48%;
+    height: auto;
+    margin: 4% 0 0 0;
   }
 
   .portfolio__item>img {
-    width: 151px;
-    height: 128px;
+    width: 100%;
+    height: auto;
   }
 
   .about {
