@@ -1487,4 +1487,8 @@ footer {
     min-width: 320px;
   }
 
+  .filter__item {
+    padding: 0 4px 0 4px;
+    margin-right: 4px;
+  }
 }
