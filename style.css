@@ -63,6 +63,7 @@ header {
   display: none;
   transition: all 250ms linear;
   background-color: #2d2f39;
+  cursor: pointer;
 }
 
 .menu {
