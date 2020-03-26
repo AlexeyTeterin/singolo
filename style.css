@@ -1196,6 +1196,8 @@ footer {
 
   .form__submit {
     width: 120px;
+    background-color: #FBC65F;
+    color: #886A30;
   }
 
   .footer__content {
