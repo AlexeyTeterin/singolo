@@ -31,6 +31,8 @@ header {
   height: 89px;
   width: 30%;
   user-select: none;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .logo.sliding-logo {
@@ -79,15 +81,7 @@ header {
   color: #ffffff;
   text-decoration: none;
   transition: all 150ms ease;
-}
-
-.menu a:hover {
-  color: #f06c64;
-  opacity: 0.7;
-}
-
-.menu a:active {
-  opacity: 0.5;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .menu .active {
@@ -217,6 +211,8 @@ header {
   background-image: url(assets/arrow-left.svg);
 
   transition: opacity 150ms ease-in-out;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .right {
@@ -1490,5 +1486,16 @@ footer {
   .filter__item {
     padding: 0 4px 0 4px;
     margin-right: 4px;
+  }
+}
+
+@media (hover:hover) {
+  .menu a:hover {
+    color: #f06c64;
+    opacity: 0.7;
+  }
+
+  .menu a:active {
+    opacity: 0.5;
   }
 }
