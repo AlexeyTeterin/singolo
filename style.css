@@ -1482,4 +1482,9 @@ footer {
 
 }
 
-@media (max-width: 374px) {}
+@media (max-width: 374px) {
+  body {
+    min-width: 320px;
+  }
+
+}
