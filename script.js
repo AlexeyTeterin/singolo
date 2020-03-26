@@ -45,7 +45,6 @@ MENU.addEventListener('click', (event) => {
   }
 
   if (BURGER.style.getPropertyValue('transform') === 'rotate(90deg)') {
-
     hideMenu();
   }
 
