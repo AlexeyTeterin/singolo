@@ -637,19 +637,13 @@ header {
 .social-icons>div {
   float: left;
   margin-right: 8px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 1px solid #666d89;
-
-  background-repeat: no-repeat;
-  background-position: center;
-
   transition: all 200ms ease;
 }
 
