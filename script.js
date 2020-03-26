@@ -26,14 +26,14 @@ let changeBG = function () {
   return 'rgb(240, 108, 100)';
 };
 
-// Активация кнопки Home при загрузке страницы
+// Home menu element activation on page load
 window.addEventListener('load', () => {
   if (window.pageYOffset === 0) {
     document.querySelector('#menu-home').classList.add('active');
   }
 });
 
-// Активация элементов меню при нажатии
+// Menu elements activation
 MENU.addEventListener('click', (event) => {
   let id = event.target.id;
   console.log(id);
@@ -52,7 +52,7 @@ MENU.addEventListener('click', (event) => {
   document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
 });
 
-// Переключение меню при скролле окна
+// Menu highlight on window scroll
 window.addEventListener('scroll', () => {
   let sliderOffset = document.querySelector('#slider').offsetTop;
   let servicesOffset = document.querySelector('#services').offsetTop;
@@ -86,7 +86,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Вкл/выкл телефонов
+// On/Off phones
 function switchOnOff(which) {
   let phone = document.querySelectorAll('.iphone-mask')[which - 1].parentElement.nextElementSibling;
   if (phone.classList.length === 0) {
@@ -96,7 +96,7 @@ function switchOnOff(which) {
   }
 }
 
-// Переключение слайдера кнопкой вправо
+// Slider Right button click
 document.querySelector('#arrow-right').addEventListener('click', () => {
   let activeSlide = document.querySelector('.slide.active');
   let nextSlide = document.querySelector('.slide.next');
@@ -122,7 +122,7 @@ document.querySelector('#arrow-right').addEventListener('click', () => {
   }, 350);
 });
 
-// Переключение слайдера кнопкой влево
+// Slider Left button click
 document.querySelector('#arrow-left').addEventListener('click', () => {
   let activeSlide = document.querySelector('.slide.active');
   let nextSlide = document.querySelector('.slide.next');
@@ -148,7 +148,7 @@ document.querySelector('#arrow-left').addEventListener('click', () => {
   }, 350);
 });
 
-//  Выделение картинки в Portfolio
+// Select image in Portfolio
 PORTFOLIO.addEventListener('click', (event) => {
   PORTFOLIO.querySelectorAll('div > img').forEach(element => {
     element.classList.remove('selected');
@@ -156,7 +156,7 @@ PORTFOLIO.addEventListener('click', (event) => {
   event.target.classList.add('selected');
 });
 
-//Перемешивание картинок Porfolio при нажатии на фильтры
+// Porfolio images change on filter buttons click
 FILTER.addEventListener('click', (event) => {
   if (event.target.className !== 'filter__item') return;
 
@@ -187,7 +187,7 @@ FILTER.addEventListener('click', (event) => {
   });
 });
 
-// Отправка формы
+// Send form
 function sendForm() {
   event.preventDefault();
   document.getElementById('message-block').style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
@@ -201,7 +201,7 @@ function sendForm() {
   document.getElementById('message-block').classList.remove('hidden');
 }
 
-// Нажатие кнопки OK после отправки формы
+// ОК button after form send
 CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('result-subject').innerText = '';
   document.getElementById('result-describe').innerText = '';
@@ -209,6 +209,7 @@ CLOSE_BTN.addEventListener('click', (event) => {
   document.querySelector('form').reset(); // очистка формы
 });
 
+// Open/close burger menu
 function switchMenu() {
   if (BURGER.style.getPropertyValue('transform') == 'rotate(90deg)') {
     hideMenu();
@@ -216,7 +217,7 @@ function switchMenu() {
     showMenu();
   }
 }
-
+ 
 function hideMenu() {
   BURGER.style.setProperty('transform', 'rotate(0deg)');
   MENU.classList.remove('toRight');
@@ -237,6 +238,7 @@ function showMenu() {
   menuBlock.classList.remove('hidden');
 }
 
+// On window resize close burger menu
 window.onresize = (event) => {
   if (window.innerWidth > 768) {
     document.getElementById('menu-block').classList.add('hidden');
