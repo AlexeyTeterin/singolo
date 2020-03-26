@@ -1,3 +1,4 @@
+const LOGOS = document.querySelectorAll('.logo a');
 const MENU = document.querySelector('.menu');
 const BTN = document.getElementById('btn');
 const CLOSE_BTN = document.getElementById('close-btn');
@@ -26,6 +27,14 @@ let changeBG = function () {
   return 'rgb(240, 108, 100)';
 };
 
+// Click on logo scrolls to top
+LOGOS.forEach(logo => {
+  logo.addEventListener('click', () => {
+    console.log('LOGO');
+    document.getElementById('slider').scrollIntoView(smoothScroll);
+  });
+});
+
 // Home menu element activation on page load
 window.addEventListener('load', () => {
   if (window.pageYOffset === 0) {
@@ -42,13 +51,13 @@ MENU.addEventListener('click', (event) => {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById(id).classList.add("active");
     selectedID = id;
+    document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
   }
 
   if (BURGER.style.getPropertyValue('transform') === 'rotate(90deg)') {
     hideMenu();
   }
 
-  document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
 });
 
 // Menu highlight on window scroll
@@ -248,3 +257,5 @@ window.onresize = (event) => {
     BURGER.style.setProperty('transform', 'rotate(0deg)');
   }
 };
+
+

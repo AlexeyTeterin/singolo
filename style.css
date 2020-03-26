@@ -48,6 +48,7 @@ header {
 .logo a {
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo a:active {
