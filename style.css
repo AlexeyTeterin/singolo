@@ -638,6 +638,10 @@ header {
   float: left;
   margin-right: 8px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -661,22 +665,6 @@ header {
 
 .about__social-icons {
   padding-top: 24px;
-}
-
-.icon-fb {
-  background-image: url(assets/icon-fb.png);
-}
-
-.icon-google {
-  background-image: url(assets/icon-google.png);
-}
-
-.icon-twitter {
-  background-image: url(assets/icon-twitter.png);
-}
-
-.icon-linkedin {
-  background-image: url(assets/icon-linkedin.png);
 }
 
 .feedback {
