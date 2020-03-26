@@ -811,9 +811,6 @@ header {
 
 .info__link {
   line-height: 21px;
-}
-
-.info__link:last-child {
   margin-top: 1px;
 }
 
