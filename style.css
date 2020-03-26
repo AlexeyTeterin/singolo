@@ -759,7 +759,8 @@ header {
 
 .form__submit {
   width: 120px;
-  background-color: #d6564f;
+  background-color: #FBC65F;
+  color: #886A30;
 
   transition: all 100ms ease-in-out;
 }
@@ -769,7 +770,6 @@ header {
   cursor: pointer;
   background-color: #2d303a;
 
-  transform: scale(0.97);
 }
 
 .form__submit:active {
@@ -1196,8 +1196,6 @@ footer {
 
   .form__submit {
     width: 120px;
-    background-color: #FBC65F;
-    color: #886A30;
   }
 
   .footer__content {
