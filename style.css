@@ -630,6 +630,10 @@ header {
   letter-spacing: -0.005em;
 }
 
+.social-icons {
+  height: 32px;
+}
+
 .social-icons>div {
   float: left;
   margin-right: 8px;
