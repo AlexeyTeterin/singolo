@@ -4,6 +4,8 @@ const CLOSE_BTN = document.getElementById('close-btn');
 const FILTER = document.querySelector(".portfolio__filter");
 const PORTFOLIO = document.querySelector(".portfolio__table");
 const FORM = document.querySelector('#myForm');
+const BURGER = document.querySelector('.burger');
+const menuBlock = document.getElementById('menu-block');
 var selectedID = 'menu-home';
 var smoothScroll = {
   block: "start",
@@ -24,14 +26,14 @@ let changeBG = function () {
   return 'rgb(240, 108, 100)';
 };
 
-// Активация кнопки Home при загрузке страницы
+// Home menu element activation on page load
 window.addEventListener('load', () => {
   if (window.pageYOffset === 0) {
     document.querySelector('#menu-home').classList.add('active');
   }
 });
 
-// Активация элементов меню при нажатии
+// Menu elements activation
 MENU.addEventListener('click', (event) => {
   let id = event.target.id;
   console.log(id);
@@ -42,39 +44,48 @@ MENU.addEventListener('click', (event) => {
     selectedID = id;
   }
 
+  if (BURGER.style.getPropertyValue('transform') === 'rotate(90deg)') {
+    hideMenu();
+  }
+
   document.querySelector(menuTargetIDs[selectedID]).scrollIntoView(smoothScroll);
 });
 
-// Переключение меню при скролле окна
+// Menu highlight on window scroll
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset < 500) {
+  let sliderOffset = document.querySelector('#slider').offsetTop;
+  let servicesOffset = document.querySelector('#services').offsetTop;
+  let portfolioOffset = document.querySelector('#portfolio').offsetTop;
+  let aboutOffset = document.querySelector('#about').offsetTop;
+  let feedbackOffset = document.querySelector('#feedback').offsetTop;
+  if (Math.abs(window.pageYOffset - sliderOffset <= 300) || (window.pageYOffset === 0)) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-home').classList.add('active');
     selectedID = 'menu-home';
   }
-  if (window.pageYOffset >= 400) {
+  if (Math.abs(window.pageYOffset - servicesOffset) <= 280) {
     document.getElementById(selectedID).classList.remove('active');
     document.getElementById('menu-serv').classList.add('active');
     selectedID = 'menu-serv';
   }
-  if (window.pageYOffset >= 900) {
+  if (Math.abs(window.pageYOffset - portfolioOffset) <= 300) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-portf').className = "active";
     selectedID = 'menu-portf';
   }
-  if (window.pageYOffset >= 1700) {
+  if (Math.abs(window.pageYOffset - aboutOffset) <= 300) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-about').className = "active";
     selectedID = 'menu-about';
   }
-  if (window.pageYOffset >= 2400 || (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
+  if (Math.abs(window.pageYOffset - feedbackOffset) <= 300 || (window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
     document.getElementById(selectedID).className = "";
     document.getElementById('menu-contact').className = "active";
     selectedID = 'menu-contact';
   }
 });
 
-// Вкл/выкл телефонов
+// On/Off phones
 function switchOnOff(which) {
   let phone = document.querySelectorAll('.iphone-mask')[which - 1].parentElement.nextElementSibling;
   if (phone.classList.length === 0) {
@@ -84,7 +95,7 @@ function switchOnOff(which) {
   }
 }
 
-// Переключение слайдера кнопкой вправо
+// Slider Right button click
 document.querySelector('#arrow-right').addEventListener('click', () => {
   let activeSlide = document.querySelector('.slide.active');
   let nextSlide = document.querySelector('.slide.next');
@@ -110,7 +121,7 @@ document.querySelector('#arrow-right').addEventListener('click', () => {
   }, 350);
 });
 
-// Переключение слайдера кнопкой влево
+// Slider Left button click
 document.querySelector('#arrow-left').addEventListener('click', () => {
   let activeSlide = document.querySelector('.slide.active');
   let nextSlide = document.querySelector('.slide.next');
@@ -136,7 +147,7 @@ document.querySelector('#arrow-left').addEventListener('click', () => {
   }, 350);
 });
 
-//  Выделение картинки в Portfolio
+// Select image in Portfolio
 PORTFOLIO.addEventListener('click', (event) => {
   PORTFOLIO.querySelectorAll('div > img').forEach(element => {
     element.classList.remove('selected');
@@ -144,7 +155,7 @@ PORTFOLIO.addEventListener('click', (event) => {
   event.target.classList.add('selected');
 });
 
-//Перемешивание картинок Porfolio при нажатии на фильтры
+// Porfolio images change on filter buttons click
 FILTER.addEventListener('click', (event) => {
   if (event.target.className !== 'filter__item') return;
 
@@ -170,12 +181,12 @@ FILTER.addEventListener('click', (event) => {
 
   let n = 0;
   elements.forEach(el => {
-    console.log(n+=25);
-    setTimeout(() => el.style.opacity = 1, 200+n);
+    console.log(n += 25);
+    setTimeout(() => el.style.opacity = 1, 200 + n);
   });
 });
 
-// Отправка формы
+// Send form
 function sendForm() {
   event.preventDefault();
   document.getElementById('message-block').style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
@@ -189,10 +200,51 @@ function sendForm() {
   document.getElementById('message-block').classList.remove('hidden');
 }
 
-// Нажатие кнопки OK после отправки формы
+// ОК button after form send
 CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('result-subject').innerText = '';
   document.getElementById('result-describe').innerText = '';
   document.getElementById('message-block').classList.add('hidden');
   document.querySelector('form').reset(); // очистка формы
 });
+
+// Open/close burger menu
+function switchMenu() {
+  if (BURGER.style.getPropertyValue('transform') == 'rotate(90deg)') {
+    hideMenu();
+  } else {
+    showMenu();
+  }
+}
+ 
+function hideMenu() {
+  BURGER.style.setProperty('transform', 'rotate(0deg)');
+  MENU.classList.remove('toRight');
+  MENU.classList.add('toLeft');
+  menuBlock.classList.add('hidden');
+  setTimeout(() => {
+    MENU.style.setProperty('display', 'none');
+  }, 235);
+}
+
+function showMenu() {
+  BURGER.style.setProperty('transform', 'rotate(90deg)');
+  MENU.style.setProperty('display', 'unset');
+  MENU.style.setProperty('left', '0');
+  MENU.classList.remove('toLeft');
+  MENU.classList.add('toRight');
+  menuBlock.style.setProperty('height', document.querySelector('body').scrollHeight + 'px');
+  menuBlock.classList.remove('hidden');
+}
+
+// On window resize close burger menu
+window.onresize = (event) => {
+  if (window.innerWidth > 768) {
+    document.getElementById('menu-block').classList.add('hidden');
+    MENU.style.setProperty('display', 'unset');
+  } else {
+    document.getElementById('menu-block').classList.add('hidden');
+    MENU.style.setProperty('display', 'none');
+    BURGER.style.setProperty('transform', 'rotate(0deg)');
+  }
+};

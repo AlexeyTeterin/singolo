@@ -13,12 +13,20 @@
 <body>
   <header>
     <div class="header__content">
+      <div class="burger" onclick="switchMenu()">
+        <img src="assets/burger-menu-icon.png" alt="burger" width="25px" height="20px">
+      </div>
       <div class="logo">
         <div>
           <h1><a href="#">SINGOLO<span class="red">*</span></a></h1>
         </div>
       </div>
       <div class="menu">
+        <div class="logo sliding-logo">
+          <div>
+            <h1>SINGOLO<span class="red">*</span></h1>
+          </div>
+        </div>
         <ul>
           <li><a href="" onclick="return false" id="menu-home">HOME</a></li>
           <li class="opacity-30">&#183;</li>
@@ -39,17 +47,19 @@
       <div class="slider-arrow" id="arrow-left"></div>
       <div class="slider-arrow right" id="arrow-right"></div>
       <div class="slide active">
-        <div class="iphone-v">
-          <div class="iphone-mask" onclick="switchOnOff(1)"></div>
-        </div>
-        <div id="iphone-v-off" class="hidden" onclick="switchOnOff(1)">
-          <img src="assets/iphone_v_off.png" alt="off">
-        </div>
-        <div class="iphone-h">
-          <div class="iphone-mask rotate90" onclick="switchOnOff(2)"></div>
-        </div>
-        <div id="iphone-h-off" class="hidden" onclick="switchOnOff(2)">
-          <img src="assets/iphone_v_off.png" alt="off">
+        <div class="slide1">
+          <div class="iphone-v">
+            <div class="iphone-mask" onclick="switchOnOff(1)"></div>
+          </div>
+          <div id="iphone-v-off" class="hidden" onclick="switchOnOff(1)">
+            <img src="assets/iphone_v_off.png" alt="off" width="100%" height="100%">
+          </div>
+          <div class="iphone-h">
+            <div class="iphone-mask rotate90" onclick="switchOnOff(2)"></div>
+          </div>
+          <div id="iphone-h-off" class="hidden" onclick="switchOnOff(2)">
+            <img src="assets/iphone_v_off.png" alt="off" width="100%" height="100%">
+          </div>
         </div>
       </div>
       <div class="slide next" id="slide2">
@@ -154,7 +164,7 @@
         cursus commodo, tortor mauris condimentum nibh.</div>
       <div class="about__row">
         <div class="about__item">
-          <div class="about__photo"><img src="assets/about-01.png" alt="Adam Jensen" width="300" height="300"></div>
+          <div class="about__photo"><img src="assets/about-01.png" alt="Adam Jensen" width="100%"></div>
           <div class="about__name">Adam Jensen</div>
           <div class="about__description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec
             rutrum
@@ -167,7 +177,7 @@
           </div>
         </div>
         <div class="about__item">
-          <div class="about__photo"><img src="assets/about-02.png" alt="Desmond Miles" width="300" height="300"></div>
+          <div class="about__photo"><img src="assets/about-02.png" alt="Desmond Miles" width="100%"></div>
           <div class="about__name">Desmond Miles</div>
           <div class="about__description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet,
             viverra lacus ut, ultrices velit.</div>
@@ -179,7 +189,7 @@
           </div>
         </div>
         <div class="about__item">
-          <div class="about__photo"><img src="assets/about-03.png" alt="Scolara Visari" width="300" height="300"></div>
+          <div class="about__photo"><img src="assets/about-03.png" alt="Scolara Visari" width="100%"></div>
           <div class="about__name">Scolara Visari</div>
           <div class="about__description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et
             consequat
@@ -205,8 +215,8 @@
         <input type="text" name="username" placeholder="Name (Required)" required>
         <input type="email" name="email" placeholder="Email (Required)" required>
         <input type="text" name="subject" placeholder="Subject" id="subject">
-        <textarea name="details" id="describe" cols="30" rows="10"
-          placeholder="Describe your project in detail..." maxlength="700"></textarea>
+        <textarea name="details" id="describe" cols="30" rows="10" placeholder="Describe your project in detail..."
+          maxlength="700"></textarea>
         <input type="submit" id="btn" value="Submit" class="form__submit">
       </form>
 
@@ -240,6 +250,7 @@
           </div>
         </div>
       </div>
+      <div class="clearfix" style="width: 100%; clear: both;"></div>
     </div>
   </div>
 
@@ -255,6 +266,7 @@
     </div>
   </div>
 
+  <div id="menu-block" class="hidden" onclick="hideMenu()"></div>
 
   <footer>
     <div class="footer__content">
