@@ -936,7 +936,7 @@ footer {
   overflow: hidden;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1019px) {
   .header__content {
     width: 100%;
   }
@@ -1174,7 +1174,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   header {
     position: fixed;
     width: 100%;
@@ -1482,4 +1482,4 @@ footer {
 
 }
 
-@media (max-width: 375px) {}
+@media (max-width: 374px) {}
