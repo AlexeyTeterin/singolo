@@ -1086,9 +1086,9 @@ footer {
   }
 
   .portfolio__item {
-    width: 31.6%;
+    width: calc(33% - 10px);
     height: auto;
-    margin: 2.5% 0 0 0;
+    margin: 17px 0 3px 0;
   }
 
   .portfolio__item>img {
@@ -1384,9 +1384,9 @@ footer {
   }
 
   .portfolio__item {
-    width: 48%;
+    width: calc(50% - 7px);
     height: auto;
-    margin: 4% 0 0 0;
+    margin: 14px 0 0 0;
   }
 
   .portfolio__item>img {
